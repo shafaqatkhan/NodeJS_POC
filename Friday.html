@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>
+Current Time
+</title>
+
+
+
+<style type="text/css">
+.text-center{
+text-align : center;
+}
+</style>
+</head>
+
+<body>
+<div class="text-center">
+<h1> Current Time </h1>
+
+<h2 id="currentTime"> </h2> 
+</div>
+
+<script type="text/javascript">
+var d = new Date();
+days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+ampm = d.getHours() >= 12 ? 'pm' : 'am',
+months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+var dayTime =  days[d.getDay()]+' '+months[d.getMonth()]+' '+d.getDate()+' '+d.getFullYear()+' '+hours+':'+minutes+ampm;
+document.getElementById("currentTime").innerHTML = dayTime;
+</script>
+</body>
+
+</html>
